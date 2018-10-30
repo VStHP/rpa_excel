@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Templates</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Attachable type</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @templates.each do |template| %>
+      <tr>
+        <td><%= template.file %></td>
+        <td><%= template.attachable_type %></td>
+        <td><%= link_to 'Show', template %></td>
+        <td><%= link_to 'Edit', edit_template_path(template) %></td>
+        <td><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Template', new_template_path %>

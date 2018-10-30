@@ -1,0 +1,47 @@
+<%= form_with(model: tracking, local: true) do |form| %>
+  <% if tracking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tracking.errors.count, "error") %> prohibited this tracking from being saved:</h2>
+
+      <ul>
+      <% tracking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :user_name %>
+    <%= form.text_field :user_name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group" style="position: relative;">
+    <%= form.label :check_in %>
+    <%= form.text_field :check_in, class: 'datetimepicker4 form-control' %>
+  </div>
+
+  <div class="form-group" style="position: relative;">
+    <%= form.label :check_out %>
+    <%= form.text_field :check_out, class: 'datetimepicker4 form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+<script type="text/javascript">
+  $(function () {
+  $('.datetimepicker4').datetimepicker(
+    {
+      sideBySide: true,
+      format: 'YYYY-MM-DD HH:mm',
+
+      // dateFormat: "yyyy-mm-dd"
+      // timeFormat: "HH:mm"
+      // pick12HourFormat: false
+    }
+  );
+});
+
+</script>

@@ -1,0 +1,2 @@
+module TeamplatesHelper
+end

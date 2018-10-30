@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: MyString
+  maths: 1.5
+  physics: 1.5
+  chemistry: 1.5
+
+two:
+  student: MyString
+  maths: 1.5
+  physics: 1.5
+  chemistry: 1.5

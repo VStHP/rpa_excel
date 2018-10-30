@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trackings</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>Check in</th>
+      <th>Check out</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trackings.each do |tracking| %>
+      <tr>
+        <td><%= tracking.user_name %></td>
+        <td><%= format_datetime_standard(tracking.check_in) %></td>
+        <td><%= format_datetime_standard(tracking.check_out) %></td>
+        <td><%= link_to 'Show', tracking %></td>
+        <td><%= link_to 'Edit', edit_tracking_path(tracking) %></td>
+        <td><%= link_to 'Destroy', tracking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tracking', new_tracking_path %>
+<%= link_to 'Export XLSX  by gem RubyXL', export_xlsx_trackings_path(format: :xlsx) %>

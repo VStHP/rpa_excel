@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RpaExcel</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to 'RPA', "#", id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Student', students_path %></li>
+            <li><%= link_to 'Tracking', trackings_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container" id="content-body">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+      <footer class="footer">
+        <nav>
+          <ul>
+            <small>
+            Copyright by tamdn@runsystem
+          </small>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

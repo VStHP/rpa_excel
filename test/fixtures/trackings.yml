@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_name: MyString
+  date: 2018-10-25
+  check_in: 2018-10-25 09:32:02
+  check_out: 2018-10-25 09:32:02
+  working_time: 1.5
+  status: 1
+
+two:
+  user_name: MyString
+  date: 2018-10-25
+  check_in: 2018-10-25 09:32:02
+  check_out: 2018-10-25 09:32:02
+  working_time: 1.5
+  status: 1
